@@ -17,4 +17,33 @@
   
   const database = firebase.database();
   
- 
+  
+  let name = "";
+  let destination = "";
+  let frequency = "";
+  let firstTrain = "";
+  
+  $("#trainSheet").on("submit", function() {
+  
+    event.preventDefault();
+  
+    if (!validateForm()) {
+      return false;
+    }
+  
+    name = $("#trainName").val().trim();
+    destination = $("#destination").val().trim();
+    frequency = $("#frequency").val().trim();
+    firstTrain = $("#firstTrain").val().trim();
+  
+    database.ref().push({
+      name: name,
+      destination: destination,
+      frequency: frequency,
+      firstTrain: firstTrain
+    });
+  
+    $("#trainSheet")[0].reset();
+  
+  });
+  
