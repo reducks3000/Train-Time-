@@ -47,3 +47,28 @@
   
   });
   
+  database.ref().on("child_added", function(snapshot) {
+  
+    const freq = snapshot.val().frequency;
+    const initialTime = snapshot.val().firstTrain;
+  
+    let nextTrain = calculateNextTrains(freq, initialTime);
+    let times = calculateArrivalTime(nextTrain);
+    let ChangedTime = times[0];
+    let minutesAway = times[1];
+  
+  
+    const newTableRow = $("<tr>");
+  
+    const newTableData =
+    $("<td id='table-trainName'>" + snapshot.val().name + "</td>" +
+    "<td id='table-train-destination'>" + snapshot.val().destination + "</td>" +
+    "<td id='table-train-frequency'>" + snapshot.val().frequency + "</td>" +
+    "<td id='table-train-arrival'>" + ChangedTime + "</td>"+
+    "<td id='table-train-minutes'>" + minutesAway + "</td>");
+  
+    newTableRow.append(newTableData);
+    $("#table-body").append(newTableRow);
+  
+  });
+  
