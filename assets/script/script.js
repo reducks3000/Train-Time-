@@ -72,3 +72,33 @@
   
   });
   
+  function calculateNextTrains(freq, initialTime) {
+  
+    const timeMoment = moment(initialTime, "HH:mm");
+  
+    const endOfDay = moment("23:59", "HH:mm");
+  
+    const timetable = [];
+  
+    
+    for (let i = timeMoment; i.isSameOrBefore(endOfDay); i.add(freq, "minutes")) {
+      let times = i.format("HH:mm");
+      timetable.push(times);
+    }
+  
+    let now = moment();
+  
+    let futureTrains = [];
+  
+    for (var i = 0; i < timetable.length; i++) {
+      if (moment(timetable[i], "HH:mm").isAfter(now)) {
+        futureTrains.push(timetable[i]);
+      }
+    }
+  
+    let nextTrain = futureTrains[0];
+  
+    return nextTrain;
+  
+  }
+  
