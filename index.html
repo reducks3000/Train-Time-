@@ -41,6 +41,30 @@
                 </thead>
             </table>
         </div>
+
+        <div class="rounded" id="train-inputs">
+        <form id="trainSheet">
+            <h3>Add a train!</h3>
+            <hr>
+        <div class="form-group">
+            <label for="train-name">Train name!</label>
+            <input type="text" class="form-control" id="trainName" required>
+        </div>
+        <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" required>
+        </div>
+        <div class="form-group">
+            <label for="frequency">Frequency (in minutes)</label>
+            <input type="number" class="form-control" id="frequency" required>
+        </div>
+        <div class="form-group">
+            <label for="first-train">put in time for the first train! (in military time! HH:MM)</label>
+            <input type="text" class="form-control" id="firstTrain" required>
+        </div>
+        <button class="btn btn-primary" id="add-train" type="submit">Submit</button>
+        </form>
+        </div>
     </div>
     
     <script src="assets/script/script.js"></script>
