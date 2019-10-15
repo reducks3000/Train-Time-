@@ -102,3 +102,29 @@
   
   }
   
+  function calculateArrivalTime(nextTrain) {
+    let now = moment();
+    let minutesAway = moment(nextTrain, "HH:mm").diff(now, "minutes");
+    let ChangedTime = moment(nextTrain, "HH:mm").format("h:mm a");
+    return [ChangedTime, minutesAway];
+  }
+  
+  
+  function validateForm() {
+    let firstTrainTimes = $("#firstTrain").val().trim().split(":");
+  
+    if (!validateFirstTrainTime(firstTrainTimes[0], firstTrainTimes[1])) {
+      return false;
+    }
+    return true;
+  }
+  
+  function validateFirstTrainTime(hours, minutes) {
+    if (!((hours >= 00 || hours >= 0) && (hours <= 23))) {
+      return false;
+    }
+    if (!((minutes >= 00) && (minutes <= 59))) {
+      return false;
+    }
+    return true;
+  }
