@@ -1,0 +1,58 @@
+
+.container{
+    margin: 20px;
+}
+
+.jumbotron {
+    position : relative;
+    background : url("../images/train.jpg");
+    background-position: 0% 55%;
+    background-size: cover;
+    font-weight: bold;
+    font-size: 50pt;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    color : blue;
+    box-shadow: 0 8px 6px -6px red;
+    }
+
+
+.card{
+    border : solid;
+    border-radius: 10px;
+    box-shadow: 0 7px 6px -6px;
+}
+
+#trainTable, #form-input{
+    font-family: sans-serif;
+}
+
+.thead-default{
+    background-color : lightgrey; 
+}
+
+.panel, .card-heading {
+    padding-left : 10px;
+    background-color : blue;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: .45em;
+}
+
+.form-control, .tableRow {
+    box-shadow : inset 1px 0 10px;
+}
+
+.btn{
+    background-color : lightskyblue; 
+    cursor: pointer;
+    width : 100%;
+    opacity : 0.79;
+    border : none;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: .45em;
+    box-shadow: 0 8px 6px -6px grey;
+}
+.btn:hover{
+    opacity: 1;
+}
